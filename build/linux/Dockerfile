@@ -14,3 +14,4 @@ RUN python -m pip install onnxruntime-gpu==1.11.1 numpy==1.21.6 h5py numexpr pro
 WORKDIR /app/DeepFaceLive
 COPY example.sh example.sh
 CMD ./example.sh
+#####
