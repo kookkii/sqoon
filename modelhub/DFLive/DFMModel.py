@@ -223,6 +223,20 @@ class DFMModelInitializer:
                 status = new_status
 
             yield events
+            ===============================================================
+            if new_status != status:
+                events.prev_status_initializing = status == INITIALIZING
+                events.prev_status_downloading  = status == DOWNLOADING
+                events.prev_status_initialized  = status == INITIALIZED
+                events.prev_status_error        = status == ERROR
+
+                events.new_status_initializing = new_status == INITIALIZING
+                events.new_status_downloading  = new_status == DOWNLOADING
+                events.new_status_initialized  = new_status == INITIALIZED
+                events.new_status_error        = new_status == ERROR
+                status = new_status
+
+            yield events
 
 def DFMModel_from_path(model_path : Path, device : ORTDeviceInfo = None) -> DFMModel:
     """
