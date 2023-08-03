@@ -1,6 +1,5 @@
 from pathlib import Path
 from typing import List
-
 from localization import L, Localization
 from resources.fonts import QXFontDB
 from resources.gfx import QXImageDB
